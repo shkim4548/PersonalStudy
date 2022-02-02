@@ -11,5 +11,6 @@ func main() {
 
 	fmt.Println(fruits)
 	fmt.Println(fruits[1:])
-	fmt.Println(fruits[:3])
+	fmt.Println(fruits[:2])
+	fmt.Println(len(fruits))
 }
