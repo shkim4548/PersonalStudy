@@ -2,13 +2,13 @@ import java.util.Scanner;
 
 public class io7 {
     public static void main(String[] args){
+        int a,b,res;
         Scanner scanner = new Scanner(System.in);
-
-        double a = scanner.nextDouble();
-        double b = scanner.nextDouble();
-        double res = a/b;
-        
+        a = scanner.nextInt();
+        b = scanner.nextInt();
+        res=a*b;
         System.out.println(res);
+
         scanner.close();
     }
 }
