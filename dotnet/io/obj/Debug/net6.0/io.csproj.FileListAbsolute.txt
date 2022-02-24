@@ -1,0 +1,5 @@
+/mnt/d/devDir/personal/dotnet/io/obj/Debug/net6.0/io.csproj.AssemblyReference.cache
+/mnt/d/devDir/personal/dotnet/io/obj/Debug/net6.0/io.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/d/devDir/personal/dotnet/io/obj/Debug/net6.0/io.AssemblyInfoInputs.cache
+/mnt/d/devDir/personal/dotnet/io/obj/Debug/net6.0/io.AssemblyInfo.cs
+/mnt/d/devDir/personal/dotnet/io/obj/Debug/net6.0/io.csproj.CoreCompileInputs.cache
