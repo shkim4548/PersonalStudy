@@ -1,4 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-using io3;
+﻿using System;
+using io4;
 
-io3.Main();
+class MainApp{
+    static void Main(string[] args){
+        cio4.mio4();
+    }
+}

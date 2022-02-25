@@ -1,7 +1,8 @@
 using System;
+
 namespace io3{
-    class io3{
-        public static void Main(string[] args){
+    public class cio3{
+        public void mio3(){
         Console.WriteLine("\\    /\\\n )  ( ')\n(  /  )\n \\(__)|");
         }
     }
