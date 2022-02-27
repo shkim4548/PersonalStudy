@@ -3,3 +3,13 @@
 /mnt/d/devDir/personal/dotnet/io/obj/Debug/net6.0/io.AssemblyInfoInputs.cache
 /mnt/d/devDir/personal/dotnet/io/obj/Debug/net6.0/io.AssemblyInfo.cs
 /mnt/d/devDir/personal/dotnet/io/obj/Debug/net6.0/io.csproj.CoreCompileInputs.cache
+/mnt/d/devDir/personal/dotnet/io/bin/Debug/net6.0/io
+/mnt/d/devDir/personal/dotnet/io/bin/Debug/net6.0/io.deps.json
+/mnt/d/devDir/personal/dotnet/io/bin/Debug/net6.0/io.runtimeconfig.json
+/mnt/d/devDir/personal/dotnet/io/bin/Debug/net6.0/io.dll
+/mnt/d/devDir/personal/dotnet/io/bin/Debug/net6.0/io.pdb
+/mnt/d/devDir/personal/dotnet/io/obj/Debug/net6.0/io.dll
+/mnt/d/devDir/personal/dotnet/io/obj/Debug/net6.0/refint/io.dll
+/mnt/d/devDir/personal/dotnet/io/obj/Debug/net6.0/io.pdb
+/mnt/d/devDir/personal/dotnet/io/obj/Debug/net6.0/io.genruntimeconfig.cache
+/mnt/d/devDir/personal/dotnet/io/obj/Debug/net6.0/ref/io.dll
