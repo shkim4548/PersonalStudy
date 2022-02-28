@@ -2,10 +2,10 @@ package main
 
 import "fmt"
 
-func main() {
-	var a, b, res float64
+func main(){
+	var a,b int;
 
-	fmt.Scanf("%d %d", &a, &b)
-	res = a / b
-	fmt.Printf("%f", res)
+	fmt.Scanf("%f %f",&a,&b);
+
+	fmt.Println(a*b);
 }

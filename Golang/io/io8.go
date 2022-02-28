@@ -3,12 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	var a, b int
-	fmt.Scanf("%d %d", &a, &b)
+	var a, b, res float64
 
-	fmt.Println(a + b)
-	fmt.Println(a - b)
-	fmt.Println(a * b)
-	fmt.Println(a / b)
-	fmt.Println(a % b)
+	fmt.Scanf("%d %d", &a, &b)
+	res = a / b
+	fmt.Printf("%f", res)
 }
