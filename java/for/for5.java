@@ -1,16 +1,13 @@
 import java.util.Scanner;
 
-public class for3 {
+class Main{
     public static void main(String[] args){
         int n;
-        int res=0;
         Scanner scanner = new Scanner(System.in);
-
-        n = scanner.nextInt();
-        for(int i=1; i<=n; i++){
-            res+=i;
+        n=scanner.nextInt();
+        for(int i=1;i<=n;i++){
+            System.out.println(i);
         }
-        System.out.println(res);
         scanner.close();
     }
 }
