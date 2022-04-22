@@ -1,0 +1,15 @@
+/mnt/d/devDir/personal/dotnet/if/bin/Debug/net6.0/if
+/mnt/d/devDir/personal/dotnet/if/bin/Debug/net6.0/if.deps.json
+/mnt/d/devDir/personal/dotnet/if/bin/Debug/net6.0/if.runtimeconfig.json
+/mnt/d/devDir/personal/dotnet/if/bin/Debug/net6.0/if.dll
+/mnt/d/devDir/personal/dotnet/if/bin/Debug/net6.0/if.pdb
+/mnt/d/devDir/personal/dotnet/if/obj/Debug/net6.0/if.csproj.AssemblyReference.cache
+/mnt/d/devDir/personal/dotnet/if/obj/Debug/net6.0/if.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/d/devDir/personal/dotnet/if/obj/Debug/net6.0/if.AssemblyInfoInputs.cache
+/mnt/d/devDir/personal/dotnet/if/obj/Debug/net6.0/if.AssemblyInfo.cs
+/mnt/d/devDir/personal/dotnet/if/obj/Debug/net6.0/if.csproj.CoreCompileInputs.cache
+/mnt/d/devDir/personal/dotnet/if/obj/Debug/net6.0/if.dll
+/mnt/d/devDir/personal/dotnet/if/obj/Debug/net6.0/refint/if.dll
+/mnt/d/devDir/personal/dotnet/if/obj/Debug/net6.0/if.pdb
+/mnt/d/devDir/personal/dotnet/if/obj/Debug/net6.0/if.genruntimeconfig.cache
+/mnt/d/devDir/personal/dotnet/if/obj/Debug/net6.0/ref/if.dll
