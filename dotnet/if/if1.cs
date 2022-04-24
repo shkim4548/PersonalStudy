@@ -1,7 +1,7 @@
 ﻿using System;
 
 class if1{
-    static void Main(String[] args){
+    static void main(String[] args){
         int a = int.Parse(Console.ReadLine());
         int b = int.Parse(Console.ReadLine());
 
