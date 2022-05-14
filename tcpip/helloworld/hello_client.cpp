@@ -8,6 +8,8 @@
 void error_handling(char *message);
 
 int main(int argc, char *argv[]){
+    //argc: main함수에 전달되는 데이터의 길이
+    //argv: main함수에 전달되는 실질적인 데이터, 동적 배열의 포인터로 제공된다.
     int sock;
     struct sockaddr_in serv_addr;
     char message[30];
@@ -40,7 +42,7 @@ int main(int argc, char *argv[]){
 }
 
 void error_handling(char *message){
-    fputs(message, stderr);
-    fputc('\n', stderr);
+    fputs(message, stderr);//fputs는 문자열 배열을 출력할 때 사용한다
+    fputc('\n', stderr); // fputc는 파일 입출력시에 사용한다.
     exit(1);
 }
