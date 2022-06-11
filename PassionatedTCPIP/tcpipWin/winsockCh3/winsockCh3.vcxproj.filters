@@ -21,5 +21,8 @@
     <ClCompile Include="inet_adrconv_win.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="conv_addr_win.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="conv_addr_win.cpp" />
     <ClCompile Include="endian_conv_win.c" />
     <ClCompile Include="inet_adrconv_win.c" />
   </ItemGroup>
