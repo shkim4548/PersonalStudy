@@ -8,9 +8,9 @@ int main(){
 
     cin>>n;
     for(int i=0;i<n;i++){
-        cin>>cnt;
-        getline(cin, str);
-        for(int j=1;j<str.length()+1;j++){
+        cin >> cnt;
+        cin >> str;
+        for(int j=0;j<str.length();j++){
             for(int k=0;k<cnt;k++){
                 cout<<str[j];
             }
