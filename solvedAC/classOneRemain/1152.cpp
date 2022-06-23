@@ -11,8 +11,8 @@ int main(){
             if(str[i]==' ')
                 cnt++;
     }
-    if(cnt==1 || str.length()==1)
-        std::cout<<1<<std::endl;
+    if(str.length()<=1)
+        std::cout<<0<<std::endl;
     else
         std::cout<<cnt+1<<std::endl;
 }

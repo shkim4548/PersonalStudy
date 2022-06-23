@@ -2,18 +2,24 @@
 using namespace std;
 
 int main(){
-    int a,b,res=0;
+    int a, b, rev1=0, rev2=0;
     cin>>a;
     cin>>b;
-    if(a>b){
-        res+=a%10;
-        res+=a%100-a%10;
-        res+=a/100;
+
+    rev1+=a%10*100;
+    rev1+=a%100-a%10;
+    rev1+=a/100;
+    
+    rev2+=b%10*100;
+    rev2+=b%100-b%10;
+    rev2+=b/100;
+    
+    if(rev1>rev2){
+        cout<<rev1;
     }
     else{
-        res+=b%10;
-        res+=b%100-b%10;
-        res+=b/100;
+        cout<<rev2;
     }
-    cout<<res;
+
+    return 0;
 }
