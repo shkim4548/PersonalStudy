@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="op_client_win.cpp">
+    <ClCompile Include="op_client_win.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="op_server_win.cpp">
+    <ClCompile Include="op_server_win.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

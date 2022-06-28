@@ -1,4 +1,4 @@
-#pragma(lib, "win_32.lib")
+#pragma comment(lib, "ws2_32.lib")
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>

@@ -8,7 +8,7 @@
 //피연산자의 바이트 수와 연산결과의 바이트 수를 상수화했다.
 #define BUF_SIZE 1024
 #define RLT_SIZE 4
-#define OPSZ 4;
+#define OPSZ 4
 void error_handling(char* message);
 
 int main(int argc, char* argv[]){
@@ -17,6 +17,7 @@ int main(int argc, char* argv[]){
     //배열 형태로 메모리를 정의시 송수신시 누적이 가능해 편리하다.
     char opmsg[BUF_SIZE];
     int result, opnd_cnt, i;
+    struct sockaddr_in serv_adr;
 
     if(argc!=3){
         printf("Usage : %s <IP> <port>\n", argv[0]);
