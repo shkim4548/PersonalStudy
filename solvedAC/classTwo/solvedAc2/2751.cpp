@@ -1,16 +1,21 @@
 #include<iostream>
+#include<vector>
+#include<algorithm>
 using namespace std;
 
 //우선 버블 정렬로 시행하고, 정렬 후 앞에 같은게 있으면 뒤에걸 삭제
 int main(void) {
 	int n, t;
-	int a[100];
+	//int a[100];
+	vector<int> numbers;
 	cin >> n;
-	//여기서 배열 입력 받고
 	for (int i = 0; i < n; i++) {
-		cin >> a[i];
+		cin >> t;
+		numbers.push_back(t);
 	}
-
+	sort(numbers.begin(), numbers.end());
+	//버블 정렬을 이용한 모델 -> 시간초과
+	/*
 	for (int i = 0; i < n; i++) {
 		for (int j = i; j < n; j++) {
 			//버블 정렬 실행
@@ -26,8 +31,9 @@ int main(void) {
 			}
 		}
 	}
+	*/
 	for (int i = 0; i < n; i++)
-		cout << a[i] << endl;
+		cout << numbers[i] << '\n';
 
 	return 0;
 }
