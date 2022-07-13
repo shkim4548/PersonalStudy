@@ -2,16 +2,12 @@
 using namespace std;
 
 int main(void) {
-	int n, m, hund, ten, one;
+	int n, m, compare[27] = { 0, }, divide;
 	cin >> n;
+	
+	for (int i = 1; i <= 27; i++) {
+		compare[i] = n - i;
+	}
 
-	hund = n / 100;
-	//cout << hund << '\n';
-	ten = (n % 100 - n % 10) / 10;
-	//cout << ten << '\n';
-	one = n % 10;
-	//cout << one << '\n';
-
-	cout << n - (hund + ten + one);
 	return 0;
 }
