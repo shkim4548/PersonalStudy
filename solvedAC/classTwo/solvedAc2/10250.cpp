@@ -7,17 +7,20 @@ int main(void) {
 	cin.tie(NULL), cout.tie(NULL);
 
 	vector<int> hotel;
-	int h, w, n, t, rooms[100], floors[100], width[100];
+	int h, w, n, t;
 	cin >> t;
 	for (int i = 0; i < t; i++) {
 		cin >> h >> w >> n;
 		for (int j = 1; j <= w; j++) {
 			for (int k = 1; k <= h; k++) {
-				hotel.push_back(100 * (k-1) + j);
+				hotel.push_back(100 * k + j);
 			}
 		}
 		cout << hotel[n] << '\n';
 		hotel.clear();
 	}
+	cout << '\n';
+	for (int i = 0; i < hotel.size(); i++)
+		cout << hotel[i] << '\n';
 	return 0;
 }

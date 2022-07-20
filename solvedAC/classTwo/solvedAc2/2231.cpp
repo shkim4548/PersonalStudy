@@ -11,3 +11,9 @@ int main(void) {
 
 	return 0;
 }
+/*
+while (h > 0) {
+	result = h % 10;
+	h /= 10;
+}
+*/
