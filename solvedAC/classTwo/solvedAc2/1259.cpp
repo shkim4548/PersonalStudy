@@ -3,19 +3,31 @@
 using namespace std;
 
 int main(void) {
-	string n;
-	bool ans;
-	char input;
-	for (int i = 0; i < 100; i++) {
-		cin >> input;
-		n.push_back(input);
-		//예외처리
-		//0 입력시 종료
-		if (input == '0') return;
-		//첫자리가 0인 경우 제외
-		else if (n[0] == '0') return;
-		//당연히 짝수면 펠린드롬수 일 수 없음
-		else if (n.size() % 2 == 0) ans = false;
+	string pelindrom;
+	bool ans = true;
+	while (1) {
+		cin >> pelindrom;
+		if (pelindrom == "0") return 0;
+		//짝수면 검사의 필요가 없다.
+		if (pelindrom.size() % 2 == 0) {
+			ans = false;
+			//cout << pelindrom.size() << '\n';
+		}
+		//펠린드롬수 여부 검사
+		for (int i = 0; i < pelindrom.size(); i++) {
+			//cout << pelindrom[i] << " " << pelindrom[pelindrom.size() - i - 1] << '\n';
+			if (pelindrom[i] != pelindrom[pelindrom.size() - i - 1]) {
+				ans = false;
+				break;
+				//if (i == pelindrom.size() / 2 + 1) continue;
+			}
+			else {
+				ans = true;
+				//if (i == pelindrom.size() / 2 + 1) continue;
+			}
+		}
+		if (ans == true) cout << "yes" << '\n';
+		else cout << "no" << '\n';
 	}
 	return 0;
 }
