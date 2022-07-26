@@ -1,23 +1,21 @@
 #include<iostream>
 using namespace std;
 
-int difference_sequence(int n) {
-	int an = 6, sum = 0;
-	while (1) {
-		int i = 0;
-		i++;
-		if (n == i) {
-			return i;
+void difference_sequence(int n) {
+	int i, result = 1;
+	for (i = 0; i <= n; i++) {
+		if (result >= n) {
+			cout << i << " ";
 			break;
 		}
-		sum += an;
-		an += i;
+		//cout << result << '\n';
+		result += i + 6;
 	}
 }
 
 int main(void) {
 	int input;
 	cin >> input;
-	cout << difference_sequence(input);
+	difference_sequence(input);
 	return 0;
 }

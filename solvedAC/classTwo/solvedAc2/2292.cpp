@@ -3,10 +3,18 @@ using namespace std;
 
 int main(void) {
 	//모든 방향으로 계차수열 6씩 차이난다. 한번에 6갈래로 나가야한다.
-	int n;
+	int n, an = 6, sum = 0, i;
 	cin >> n;
-	for (int i = 1; i < n; i++) {
-		for(int j=1;)
+	for (i = 1; i <= 100000000; i++) {
+		if (n == 1) {
+			cout << 1 << '\n';
+			break;
+		}
+		if (sum >= n) {
+			cout << i << '\n';
+			break;
+		}
+		sum += an * i;
 	}
 	return 0;
 }
