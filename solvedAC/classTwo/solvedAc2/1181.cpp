@@ -16,11 +16,11 @@ int main(void) {
 		str.push_back(a);
 	}
 
-	//custom sorting 적용
-	sort(str.begin(), str.end(), compare);
 	//vector 중복제거
 	str.erase(unique(str.begin(), str.end()), str.end());
-	//cout << '\n';
+	//custom sorting 적용
+	sort(str.begin(), str.end(), compare);
+	sort(str.begin(), str.end());
 
 	for (int i = 0; i < str.size(); i++) {
 		cout<<str[i]<<'\n';
