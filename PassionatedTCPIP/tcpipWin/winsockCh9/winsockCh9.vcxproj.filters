@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="get_buf.c">
+    <ClCompile Include="buf_win.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
