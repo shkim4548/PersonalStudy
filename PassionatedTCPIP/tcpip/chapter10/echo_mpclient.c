@@ -33,8 +33,10 @@ int main(int argc, char* argv[]){
     pid=fork();
     if(pid==0)
         write_routine(sock, buf);
+        //자식 프로세스라면 출력프로세스를 실행할 것
     else
         read_routine(sock, buf);
+        //자식 프로세스가 아니라면 입력 프로세스를 실행할 것
 
     close(sock);
     return 0;
