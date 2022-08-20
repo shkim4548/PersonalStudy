@@ -20,7 +20,7 @@ int main(int argc, char* argv[]){
 
     while(1){
         temps=reads;
-        //미리 준비해둔 fd_set형 변수 reads의 내용을 변수 temps
+        //미리 준비해둔 fd_set형 변수 reads의 내용을 변수 temps에 복사하고 있다.
         timeout.tv_sec=5;
         timeout.tv_usec=0;
         result=select(1, &temps, 0, 0, &timeout);

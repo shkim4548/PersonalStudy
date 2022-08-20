@@ -77,6 +77,8 @@ int main(int argc, char* argv[]){
                 write(clnt_sock, buf, str_len);
                 write(fds[1], buf, str_len);
             }
+            //if 문 바로 위에 있는 fork 함수 호출로 만들어진 자식 프로세스는 이 코드의 47행에 있는 pipe의 파일 디스크립터를 복사한다.
+            //여기서 파일 디스크립터를 복사하였기 때문에 입구인 fds1[1]을 통해 문자열 정보를 전달 할 수 있다.
             close(clnt_sock);
             puts("client disconnected...");
             return 0;
