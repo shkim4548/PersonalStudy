@@ -14,6 +14,7 @@ void urg_handler(int signo);
 int acpt_sock;
 int recv_sock;
 
+//SIGURG와 관련된 부분을 주의깊게 봐야한다
 int main(int argc, char* argv[]){
     int sock;
     struct sockaddr_in recv_adr, serv_adr;
@@ -26,6 +27,7 @@ int main(int argc, char* argv[]){
         exit(1);
     }
     act.sa_handler=urg_handler;
+    //MSG_OOB
     sigemptyset(&act.sa_mask);
     act.sa_flags=0;
 
