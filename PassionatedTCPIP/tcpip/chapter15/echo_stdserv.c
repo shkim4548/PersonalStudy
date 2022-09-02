@@ -1,4 +1,4 @@
-﻿#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
@@ -14,36 +14,30 @@ int main(int argc, char *argv[])
     char message[BUF_SIZE];
     int str_len, i;
 
-    struct sockaddr_in serv_adr, clnt_adr;
+    struct sockaddr_in serv_adr;
+    struct sockaddr_in clnt_adr;
     socklen_t clnt_adr_sz;
-
+    FILE *readfp;
+    FILE *writefp;
     if (argc != 2)
     {
-        printf("Usage: %s <port>\n", argv[0]);
+        printf("Usage : %s <port>\n", argv[0]);
         exit(1);
     }
 
-    //소켓 초기화 복습
-    // PF_INET: Protocol Family INET,
-    // SOCK_STREAM: 스트림소켓 사용, TCP 프로토콜을 사용하겠다는 의미
     serv_sock = socket(PF_INET, SOCK_STREAM, 0);
-    if (serv_sock == 1)
-    {
+    if (serv_sock == -1)
         error_handling("socket() error");
-    }
+
     memset(&serv_adr, 0, sizeof(serv_adr));
     serv_adr.sin_family = AF_INET;
-    serv_adr.sin_addr.s_addr == htonl(INADDR_ANY);
+    serv_adr.sin_addr.s_addr = htonl(INADDR_ANY);
     serv_adr.sin_port = htons(atoi(argv[1]));
 
-    // bind 실시, 여기서 소켓에 포트를 지정한다. 실패시 에러메시지를 반환 후 종료.
     if (bind(serv_sock, (struct sockaddr *)&serv_adr, sizeof(serv_adr)) == -1)
         error_handling("bind() error");
-
-    // listen 실시, 클라이언트의 접속을 기다리며, 실패서 에러메시지를 반환 후 종료
     if (listen(serv_sock, 5) == -1)
-        error_handling("listne() error");
-
+        error_handling("listen() error");
     clnt_adr_sz = sizeof(clnt_adr);
 
     for (i = 0; i < 5; i++)
@@ -53,11 +47,18 @@ int main(int argc, char *argv[])
             error_handling("accept() error");
         else
             printf("Connected client %d \n", i + 1);
-
-        while ((str_len = read(clnt_sock, message, BUF_SIZE)) != 0)
-            write(clnt_sock, message, str_len);
+        readfp = fdopen(clnt_sock, "r");
+        while (!feof(readfp))
+        {
+            //여기서 에코 클라이언트의 본체가 구현되어 있음 위의 부분은 소켓을 초기화하고 수신을 확인하는 부분이다.
+            fgets(message, BUF_SIZE, readfp);
+            fputs(message, writefp);
+            fflush(writefp);
+        }
+        close(readfp);
+        close(writefp);
     }
-    close(clnt_sock);
+    close(serv_sock);
     return 0;
 }
 
