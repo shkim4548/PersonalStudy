@@ -28,7 +28,38 @@ int main(int argc, char *argv[])
 
     memset(&serv_adr, 0, sizeof(serv_adr));
     serv_adr.sin_family = AF_INET;
-    serv_adr.sin_addr.s_addr=inet_addr(argv[1]);
-    serv_adr.sin_port =htons(atoi())
+    serv_adr.sin_addr.s_addr = inet_addr(argv[1]);
+    serv_adr.sin_port = htons(atoi(argv[2]));
+
+    if (connect(sock, (struct sockaddr *)&serv_adr, sizeof(serv_adr)) == -1)
+        error_handling("connect() error");
+
+    else
+        puts("conneting...");
+
+    readfp = fdopen(sock, "r");
+    writefp = fdopen(sock, "w");
+    while (1)
+    {
+        fputs("input message(Q to quit): ", stdout);
+        fgets(message, BUF_SIZE, stdin);
+        if (!strcmp(message, "q\n") || !strcmp(message, "Q\n"))
+            break;
+
+        fputs(message, writefp);
+        fflush(writefp);
+        fgets(message, BUF_SIZE, readfp);
+        printf("Message from server: %s", message);
+    }
+    fclose(writefp);
+    fclose(readfp);
+    return 0;
+}
+
+void error_handling(char *message)
+{
+    fputs(message, stderr);
+    fputc('\n', stderr);
+    exit(1);
 }
 //메모사항 : atoi는 문자열을 정수로 바꾸는 함수로 대표적인 보안 취약함수이므로 안쓰는게 좋다
