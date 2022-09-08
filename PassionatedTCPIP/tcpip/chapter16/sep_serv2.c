@@ -26,24 +26,23 @@ int main(int argc, char *argv[])
 
     bind(serv_sock, (struct sockaddr *)&serv_adr, sizeof(serv_adr));
     listen(serv_sock, 5);
-    clnt_adr_sz = sizeof(clnt_adr);
-    clnt_sock = accept(serv_sock, (struct sockaddr *)&clnt_adr, &clnt_adr_sz);
+    clnt_adr_sz = accept(serv_sock, (struct sockaddr *)&clnt_adr, &clnt_adr_sz);
 
     readfp = fdopen(clnt_sock, "r");
-    // clnt_sock에 저장된 파일 디스크립터를 기반으로 읽기모드 FILE 포인터를 생성
-    writefp = fdopen(clnt_sock, "w");
-    // clnt_sock에 저장된 파일 디스크립터를 기반으로 쓰기모드 FIEL 포인터를 생성
+    //fdopen 함수 호출을 통해서 FILE 포인터를 생성하고 있다.
+    writefp = fdopen(dup(clnt_sock), "w");
+    //dup 함수호출의 반환 값을 대상으로 FILE 포인터를 생성한다.
 
-    fputs("FROM SERVER: Hi~ client?\n", writefp);
+    fputs("FROM SERVER: Hi~ client? \n", writefp);
     fputs("I love all of the world \n", writefp);
     fputs("You are awesome! \n", writefp);
     fflush(writefp);
-    //클라이언트로 문자열을 전송한 후 fflush 함수 호출하여 전송을 마무리
 
+    shutdown(fileno(writefp), SHUT_WR);
+    //이 문장에서 fileno 함수호출 시 반환되는 파일 디스크립터를 대상으로 shutdown 함수를 호출하고 있다. 이로 인해서 Half-close가 진행되어 EOF가 전달된다.
     fclose(writefp);
-    //쓰기모드 FILE포인터를 대상으로 fclose 함수를 호출하고 있다 -> 이를 통해 상대방 호스트에게 EOF를 전송
+
     fgets(buf, sizeof(buf), readfp);
-    //클라이언트가 EOF를 수신한 후에 보내는 문자열 -> 당연하지만 클라이언트는 이 문자열을 수신하지 못함
     fputs(buf, stdout);
     fclose(readfp);
     return 0;
