@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="thread1_win.c" />
     <ClCompile Include="thread2_win.c" />
+    <ClCompile Include="thread3_win.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -16,6 +16,7 @@ void error_handling(char *msg);
 
 int clnt_cnt = 0;
 int clnt_socks[MAX_CLNT];
+//위의 두 줄은 서버에 접속한 클라이언트의 소켓 관리를 위한 변수의 배열이다. 이 둘의 접근과 관련 있는 코드가 임계영역을 구성하게 된다
 pthread_mutex_t mutx;
 
 int main(int argc, char *argv[])
@@ -50,10 +51,13 @@ int main(int argc, char *argv[])
 
         pthread_mutex_lock(&mutx);
         clnt_socks[clnt_cnt++] = clnt_sock;
+        //새로운 연결이 형성될 때마다 변수 clnt_cnt와 배열 clnt_socks에 해당 정보를 등록한다.
         pthread_mutex_unlock(&mutx);
 
         pthread_create(&t_id, NULL, handle_clnt, (void *)&clnt_sock);
+        //추가된 클라이언트에게 서비스를 제공하기 위한 쓰레드를 생성하고 있다. 실행될 함수는 3번 인자의 내용과 같다.
         pthread_detach(t_id);
+        //pthread_detach 함수호출을 통해서 종료된 쓰레드가 메모리에서 완전히 소멸되도록 하고 있다
         printf("Connected client IP: %s \n", inet_ntoa(clnt_adr.sin_addr));
     }
     close(serv_sock);
@@ -87,6 +91,7 @@ void *handle_clnt(void *arg)
 
 void send_msg(char *msg, int len)
 {
+    //이 함수는 연결된 모든 클라이언트에게 메시지를 전송하는 기능을 제공한다.
     int i;
     pthread_mutex_lock(&mutx);
     for (i = 0; i < clnt_cnt; i++)
