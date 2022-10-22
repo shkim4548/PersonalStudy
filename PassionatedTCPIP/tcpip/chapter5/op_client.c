@@ -42,6 +42,7 @@ int main(int argc, char* argv[]){
         puts("Connect....");
 
     fputs("Operand count: ", stdout);
+    //데이터의 길이를 입력받아서 배열 0번으로 넣는다.
     scanf("%d", &opnd_cnt);
     opmsg[0]=(char)opnd_cnt;
 
@@ -49,9 +50,12 @@ int main(int argc, char* argv[]){
         printf("Operand %d: ", i+1);
         scanf("%d", (int*)&opmsg[i*OPSZ+1]);
     }
+    //앞서 입력받은 정수들 뒤에 연산자 문자를 입력해야한다. 그를 위해 \n을 제거한다.
     fgetc(stdin);
     fputs("Operator: ", stdout);
+    //실질적인 연산자 입력 부분
     scanf("%c", &opmsg[opnd_cnt*OPSZ+1]);
+    //입력받은 내용들을 write함수를 이용해 한번에 전송한다.
     write(sock, opmsg, opnd_cnt*OPSZ+2);
     read(sock, &result, RLT_SIZE);
 

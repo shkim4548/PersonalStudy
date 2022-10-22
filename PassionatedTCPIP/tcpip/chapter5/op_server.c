@@ -41,11 +41,11 @@ int main(int argc, char* argv[]){
     if(listen(serv_sock,5)==-1)
         error_handling("listen() error");
     clnt_adr_sz=sizeof(clnt_adr);
-
+    //클라이언트가 발송한 데이터를 바이트 단위로 반복해서 읽는다.
     for(i=0;i<5;i++){
         opnd_cnt=0;
-        //클라이언트가
         clnt_sock=accept(serv_sock, (struct sockaddr*)&clnt_adr, &clnt_adr_sz);
+        //제일먼저 연산자 갯수 정보를 읽는다.
         read(clnt_sock, &opnd_cnt, 1);
 
         recv_len=0;

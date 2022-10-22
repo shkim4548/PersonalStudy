@@ -39,7 +39,7 @@ int main(int argc, char* argv[]){
     
     else
         puts("Connect....");
-    
+    //--------------------------------------------------
     //여기부터가 앞선 코드의 문제를 해결하는 방법
     while(1){
         fputs("Input message(Q to quit: ", stdout);
@@ -53,11 +53,14 @@ int main(int argc, char* argv[]){
 
         while(recv_len<str_len){
             recv_cnt=read(sock, &message[recv_len], BUF_SIZE-1);
+            //read함수 단번 호출 ->전송할 바이트 크기만큼 반복 호출
             if(recv_cnt==-1)
                 error_handling("read() error");
             recv_len+=recv_cnt;
         }
         message[recv_len]=0;
+        //여기까지가 해결부 끝
+        //------------------------------------------------
         printf("Message from server: %s", message);
     }
     close(sock);
