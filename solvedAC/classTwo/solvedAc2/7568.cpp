@@ -1,24 +1,36 @@
 #include<iostream>
-#include<vector>
-#include<algorithm>
 using namespace std;
 
-bool custonSort(pair<int, int> param1, pair<int, int> param2) {
-	
-}
+const int MAX_PERSONALS = 50;
 
-int main(void) {
-	int n, tall, weight, rank;
-	pair<int, int> input;
-	vector<pair<int, int>> dungChi;
+struct Person
+{
+	int height;
+	int weight;
+	int rank = 1;
+};
 
-	//모두 입력 받고
-	cin >> n;
-	for (int i = 0; i < n; i++) {
-		cin >> input.first >> input.second;
-		dungChi.push_back(make_pair(input.first, input.second));
+int main(void) 
+{
+	Person person[MAX_PERSONALS];
+	int size, rank;
+	cin >> size;
+	for (int i = 0; i < size; i++)
+	{
+		cin >> person[i].height >> person[i].weight;
+		//cout << person[i].height << '\n' << person[i].weight << '\n';
+	}
+	for (int i = 0; i < size; i++)
+	{
+		int j = 0;
+		while (j < size)
+		{
+			if (person[i].height < person[j].height && person[i].weight < person[j].weight)
+				person[i].rank++;
+			j++;
+		}
 	}
 
-	sort(dungChi.begin(), dungChi.end());
-	for(int i=0;i<)
+	for (int i = 0; i < size; i++)
+		cout << person[i].rank << ' ';
 }
