@@ -26,6 +26,6 @@ int main(void) {
 	sort(v1.begin(), v1.end(), customSort);
 
 	for (int i = 0; i < v1.size(); i++) {
-		cout << v1[i].first <<" "<< v1[i].second << endl;
+		cout << v1[i].first <<" "<< v1[i].second << '\n';
 	}
 }

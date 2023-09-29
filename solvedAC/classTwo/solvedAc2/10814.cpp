@@ -4,6 +4,11 @@
 #include<algorithm>
 using namespace std;
 
+/*----------------------------------------
+	stable_sort
+	입력 순서가 보장되는 sort 함수이다
+------------------------------------------*/
+
 bool customSort(pair<int, string> p1, pair<int, string> p2) {
 	return p1.first < p2.first;
 }
