@@ -4,10 +4,8 @@
 using namespace std;
 
 int main(void) {
-	int m, n, count = 0;
+	int m, n;
 	queue<int> original;
-	queue<int> temp;
-	queue<int> result;
 
 	cin >> n >> m;
 	for (int i = 1; i <= n; ++i) {
@@ -15,7 +13,17 @@ int main(void) {
 		original.push(i);
 		//cout << original.back() << " ";
 	}
-	int i = m;
-
+	cout << "<";
+	// 요세푸스 큐 구현
+	while (original.size() > 1) {
+		for (int i = 1; i < m; i++) {
+			int temp = original.front();
+			original.pop();
+			original.push(temp);
+		}
+		cout << original.front() << ", ";
+		original.pop();
+	}
+	cout << original.front() << ">" << '\n';
 	return 0;
 }
