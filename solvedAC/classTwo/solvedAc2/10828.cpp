@@ -3,44 +3,68 @@
 #include <stack>
 using namespace std;
 
-void customStack(string command, int n = 0) {
-	stack<int> stack_;
+stack<int> s;
 
-	if (command == "push")
-		stack_.push(n);
+void spush(int value) {
+	s.push(value);
+}
 
-	else if (command == "empty") {
-		if (stack_.empty())
-			cout << 1 << '\n';
+void spop() {
+	if (s.empty())
+		cout << -1 << '\n';
 
-		else
-			cout << 0 << '\n';
-	}
-
-	else if (command == "size")
-		cout << stack_.size() << '\n';
-
-	else if (command == "top")
-		cout << stack_.top() << '\n';
-
-	else if (command == "pop") {
-		if (stack_.size() == 0)
-			cout << -1 << '\n';
-		else
-			cout << stack_.top() << '\n';
+	else {
+		cout << s.top() << '\n';
+		s.pop();
 	}
 }
 
-int main(void) {
-	int n, count = 0, input = 0;
-	cin >> n;
-	string command;
-	while (true) {
-		if (n == count)
-			break;
-		scanf_s("%s %d", command, &input);
+void ssize() {
+	cout << s.size() << '\n';
+}
 
-		customStack(command, input);
+void sempty() {
+	cout << (int)s.empty() << '\n';
+}
+
+void stop() {
+	if (s.empty())
+		cout << -1 << '\n';
+
+	else {
+		cout << s.top() << '\n';
 	}
+}
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	string command;
+	int n, value;
+
+	cin >> n;
+	for (int i = 0; i < n; i++) {
+		cin >> command;
+		if (command == "push") {
+			cin >> value;
+			spush(value);
+		}
+
+		else if (command == "pop") {
+			spop();
+		}
+
+		else if (command == "size") {
+			ssize();
+		}
+
+		else if (command == "empty") {
+			sempty();
+		}
+		else if (command == "top") {
+			stop();
+		}
+	}
+
 	return 0;
 }
