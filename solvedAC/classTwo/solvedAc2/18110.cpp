@@ -1,6 +1,6 @@
 #include <iostream>
-#include <deque>
 #include <cmath>
+#include <vector>
 #include <algorithm>
 using namespace std;
 
@@ -8,12 +8,18 @@ using namespace std;
 	c++ 반올림을 해봅시다
 	오사오입 문제는 C++와는 관계가 없습니다
 	문제을 제대로 읽고 0인 경우를 처리해야한다.
+	부동소수점 오차
 --------------------------------*/
 
+\
 int main(void) {
-	deque<int> d;
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cout.tie(nullptr);
+
 	int n, input, sum = 0;
-	float trimmedAvg = 0, avg = 0;
+	float trimmed = 0, res = 0;
+	vector<int> v;
 	cin >> n;
 
 	if (n == 0) {
@@ -23,27 +29,14 @@ int main(void) {
 
 	for (int i = 0; i < n; i++) {
 		cin >> input;
-		d.push_back(input);
-		sum += input;
+		v.push_back(input);
 	}
-
-	// 절사평균을 계산하는 부분
-	trimmedAvg = ((float)(n * 15) / 100);
-	sort(d.begin(), d.end());
-
-	// 절사하기
-	for (int i = 0; i < round(trimmedAvg); i++) {
-		d.pop_back();
-		d.pop_front();
-
+	trimmed = round(n * 0.15);
+	sort(v.begin(), v.end());
+	for (int i = trimmed; i < n - trimmed; i++) {
+		res += v[i];
 	}
-	for (int i = 0; i < n; i++) {
-		if (d.empty())
-			break;
-		avg += d.front();
-		d.pop_front();
-	}
-	int bottom = n - 2 * (round(trimmedAvg));
-	cout << round((avg / bottom)) << '\n';
-	return 0;
+	
+	res /= n - (trimmed * 2);
+	cout << round(res) << '\n';
 }
