@@ -24,7 +24,10 @@
     <ClCompile Include="17219.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="11403.cpp">
+    <ClCompile Include="1463.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="1260.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

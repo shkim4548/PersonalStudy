@@ -21,7 +21,8 @@
   <ItemGroup>
     <ClCompile Include="11047.cpp" />
     <ClCompile Include="11399.cpp" />
-    <ClCompile Include="11403.cpp" />
+    <ClCompile Include="1260.cpp" />
+    <ClCompile Include="1463.cpp" />
     <ClCompile Include="17219.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

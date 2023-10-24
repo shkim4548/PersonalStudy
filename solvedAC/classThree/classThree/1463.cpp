@@ -4,6 +4,8 @@ using namespace std;
 /*
 	if - else 문의 함정
 	최소값이란 점은 항상 답이 되는 자료구조는 vector등을 생각해야한다.
+	바텀업
+	- 배열을 선언하고 하나씩 채워나가는 방식
 */
 
 void getRes(int n) {
