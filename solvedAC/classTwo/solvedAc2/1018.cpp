@@ -6,26 +6,19 @@ using namespace std;
 /*
 	좌상단을 기준으로 잡고 모두 찾아서 최소값을 찾는다.
 */
+int minRepaint(vector<string>& board, int x, int y);
 
 int main() {
-	vector<vector<char>> chess;
-	vector<int> res;
-	int n, m;
-	char input, leftup, rightdown;
-	
-	cin >> n;
-	cin >> m;
-	for (int i = 1; i <= n; i++) {
-		for (int j = 1; j <= m; j++) {
-			cin >> input;
-			chess[i].push_back(input);
-		}
+	int N, M;
+	ci >> n >> m;
+	vector<string> board(N);
+	for (int i = 0; i < N; i++) {
+		cin >> board[i];
 	}
 
-	for (int i = 1; i <= n; i++) {
-		for (int j = 1; j <= m; j++) {
-			cout << chess[i][j] << ' ';
-		}
-		cout << '\n';
+	int minRepaintCount = 64;
+	for (int i = 0; i + 7 < N; i++) {
+		for(int j = 0;j+7<M;j++)
+			minRepaintCount = min(minRepaintCount, minRepaint(board, i, j))
 	}
 }
