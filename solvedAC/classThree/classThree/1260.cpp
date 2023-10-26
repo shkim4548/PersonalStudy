@@ -3,7 +3,13 @@
 #include <queue>
 #include <algorithm>
 #include <cstdlib>
+#include <cstdio>
+#include <cstring>
 using namespace std;
+
+/*
+	memset GNU 컴파일러에선 cstring을 무조건 포함해야한다
+*/
 
 const int MAX = 1001;
 vector<int> graph[MAX];
