@@ -10,10 +10,13 @@ using namespace std;
 */
 
 int main(void) {
-	int n;
+	int n, input, sum = 0;
 	cin >> n;
-	vector<int> stair;
+	vector<int> maxVec;
+	vector<int> stair(n);
 
-	int i = 0;
-	while()
+	for (int i = 0; i < n; i++) {
+		cin >> input;
+		stair.push_back(input);
+	}
 }
