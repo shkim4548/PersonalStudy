@@ -21,11 +21,13 @@
   <ItemGroup>
     <ClCompile Include="11047.cpp" />
     <ClCompile Include="11399.cpp" />
+    <ClCompile Include="11659.cpp" />
     <ClCompile Include="1260.cpp" />
     <ClCompile Include="1463.cpp" />
     <ClCompile Include="17219.cpp" />
     <ClCompile Include="1764.cpp" />
     <ClCompile Include="2178.cpp" />
+    <ClCompile Include="2579.cpp" />
     <ClCompile Include="2606.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
