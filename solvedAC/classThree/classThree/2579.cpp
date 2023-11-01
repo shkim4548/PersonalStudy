@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 /*
@@ -12,11 +13,28 @@ using namespace std;
 int main(void) {
 	int n, input, sum = 0;
 	cin >> n;
-	vector<int> maxVec;
 	vector<int> stair(n);
 
 	for (int i = 0; i < n; i++) {
-		cin >> input;
-		stair.push_back(input);
+		cin >> stair[i];
 	}
+
+	sum += stair[n];
+	stair.pop_back();
+
+	int i = n - 1;
+	while (i >= 0) {
+		i--;
+		if (i < 2) {
+			sum += stair[i];
+			break;
+		}
+
+		else {
+			sum += max(stair[i - 1], stair[i - 2]);
+		}
+	}
+
+	cout << sum << '\n';
+	return 0;
 }

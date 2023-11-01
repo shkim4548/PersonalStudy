@@ -5,25 +5,8 @@ using namespace std;
 /*
     동적계획법
     메모이제이션을 활용하여 풀이한 문제
+    입력이 비동기처리가 된다해도 온라인 컴파일러는 느려서 미리 계산하는게 빠르다
 */
-
-int cnt0 = 0, cnt1 = 0;
-vector<int> memoization;
-
-int fibonacci(int x) {
-    //cout << "init fibonacci" << '\n';
-    if (x == 0) {
-        cnt0++;
-        return 0;
-    }
-    else if (x == 1) {
-        cnt1++;
-        return 1;
-    }
-    else {
-        return memoization[x] = fibonacci(x - 1) + fibonacci(x - 2);
-    }
-}
 
 int main(void) {
     ios::sync_with_stdio(false);
@@ -31,14 +14,22 @@ int main(void) {
     cout.tie(nullptr);
 
     int n, t;
+    int memoization[41] = { 0,1, 1 };
     cin >> n;
-    for (int i = 0; i < n; ++i) {
-        cin >> t;
-        memoization.clear();
-        memoization.resize(t + 1, 0);
-        fibonacci(t);
-        cout << cnt0 << ' ' << cnt1 << '\n';
-        cnt0 = 0;
-        cnt1 = 0;
+    // 메모이제이션을 효율적으로 구성하기 위해서 함수를 굳이 분리하지 않는다
+    for (int i = 3; i < 41; i++) {
+        memoization[i] = memoization[i - 1] + memoization[i - 2];
     }
+
+    for (int i = 0; i < n; i++) {
+        cin >> t;
+        if (t == 0)
+            cout << 1 << ' ' << 0 << '\n';
+        else if (t == 1)
+            cout << 0 << ' ' << 1 << '\n';
+        else
+            cout << memoization[t - 1] << ' ' << memoization[t] << '\n';
+    }
+
+    return 0;
 }

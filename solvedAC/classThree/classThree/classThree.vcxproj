@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1003.cpp" />
+    <ClCompile Include="1012.cpp" />
     <ClCompile Include="11047.cpp" />
     <ClCompile Include="11399.cpp" />
     <ClCompile Include="11659.cpp" />
@@ -30,6 +31,7 @@
     <ClCompile Include="2178.cpp" />
     <ClCompile Include="2579.cpp" />
     <ClCompile Include="2606.cpp" />
+    <ClCompile Include="9095.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
