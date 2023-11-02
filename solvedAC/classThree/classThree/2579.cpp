@@ -10,19 +10,31 @@ using namespace std;
 	3. 마지막 도착 계단은 반드시 밟아야 한다.
 */
 
+int Max(int a, int b) {
+	return a > b ? a : b;
+}
+
 int main(void) {
-	int n, input, sum = 0;
+	int n, sum = 0;
 	cin >> n;
-	vector<int> stair(n);
+	vector<int> stair(301);
+	vector<int> res(301);
 
 	for (int i = 0; i < n; i++) {
 		cin >> stair[i];
 	}
 
-	for (int i = 0; i < n; i++) {
-
+	/* 마지막 칸을 반드시 밟는 방법
+		1. 전칸을 밟고 마지막을 밟는 경우	-> (n-3) + (n-1) + n -> 연속 3칸을 방지
+		2. 전전칸을 밟고 마지막을 밟는 경우 -> (n-2) + (n)
+	*/
+	res[0] = stair[0];
+	res[1] = Max(stair[0] + stair[1], stair[1]);
+	res[2] = Max(stair[0] + stair[2], stair[1] + stair[2]);
+	for (int i = 3; i < n; i++) {
+		res[i] = Max(res[i - 2] + stair[i], stair[i - 1] + stair[i] + res[i - 3]);
 	}
 
-	cout << sum << '\n';
+	cout << res[n - 1] << '\n';
 	return 0;
 }
