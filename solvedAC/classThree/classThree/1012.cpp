@@ -4,21 +4,19 @@
 #include <algorithm>
 using namespace std;
 
-const int MAX = 1001;
+const int MAX = 2501;
 bool visited[MAX];
 vector<int> graph[MAX];
 
-int cnt = 1;
 void DFS(int x) {
 	visited[x] = true;
+	cout << x << ' ';
 	for (int i = 0; i < graph[x].size(); i++) {
 		int y = graph[x][i];
 		if (!visited[y]) {
-			cnt++;
 			DFS(y);
 		}
 	}
-	cout << cnt << '\n';
 }
 
 int main(void) {

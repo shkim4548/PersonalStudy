@@ -19,20 +19,8 @@ int main(void) {
 		cin >> stair[i];
 	}
 
-	sum += stair[n];
-	stair.pop_back();
+	for (int i = 0; i < n; i++) {
 
-	int i = n - 1;
-	while (i >= 0) {
-		i--;
-		if (i < 2) {
-			sum += stair[i];
-			break;
-		}
-
-		else {
-			sum += max(stair[i - 1], stair[i - 2]);
-		}
 	}
 
 	cout << sum << '\n';
