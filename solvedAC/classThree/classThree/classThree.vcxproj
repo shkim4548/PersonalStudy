@@ -28,9 +28,12 @@
     <ClCompile Include="1463.cpp" />
     <ClCompile Include="17219.cpp" />
     <ClCompile Include="1764.cpp" />
+    <ClCompile Include="11279.cpp" />
+    <ClCompile Include="1927.cpp" />
     <ClCompile Include="2178.cpp" />
     <ClCompile Include="2579.cpp" />
     <ClCompile Include="2606.cpp" />
+    <ClCompile Include="7576.cpp" />
     <ClCompile Include="9095.cpp" />
     <ClCompile Include="9375.cpp" />
   </ItemGroup>
