@@ -27,7 +27,7 @@ void DFS(int y, int x) {
 		if (ny < 0 || ny >= N || nx < 0 || nx >= M)
 			continue;
 
-		// 방문 x이고 배추가 있다면 탐색을 계속한다.
+		// 방문 하지 않았으며 배추가 있다면 탐색을 계속한다.
 		if (graph[ny][nx] && !visited[ny][nx]) {
 			visited[ny][nx]++;	// bool이니까 true가 되겠죠?
 			DFS(ny, nx);
