@@ -72,5 +72,8 @@
     <ClCompile Include="11279_2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="11724.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

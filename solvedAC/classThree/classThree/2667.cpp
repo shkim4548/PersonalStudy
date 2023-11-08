@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <algorithm>
 using namespace std;
 
 /*
@@ -62,6 +63,8 @@ int main(void) {
 			}
 		}
 	}
+
+	sort(total.begin(), total.end());
 
 	cout << total.size() << '\n';
 	// 1번 줄에 총 단지수가 먼저 나와야 하기 때문에 출력부와 연산부를 분리
