@@ -57,9 +57,6 @@
     <ClCompile Include="1927.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="7576.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="1012.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -73,6 +70,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="11724.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="14940.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
