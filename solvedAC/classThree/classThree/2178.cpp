@@ -28,6 +28,7 @@ void BFS(int yStart, int xStart) {
 			// 가동범위인지를 체크한다.
 			if (ny < 0 || ny >= N || ny < 0 || ny >= M)
 				continue;
+			//
 			if (graph[ny][nx] == 0)
 				continue;
 
@@ -53,6 +54,7 @@ int main() {
 	}
 
 	BFS(0, 0);
+	// 여기서 목표지점을 결정해줘야한다.
 	cout << dist[N-1][M-1] << '\n';
 	return 0;
 }
