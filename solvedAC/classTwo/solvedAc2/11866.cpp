@@ -1,24 +1,29 @@
-#include<iostream>
-#include<vector>
-#include<queue>
+#include <iostream>
+#include <queue>
+#include <algorithm>
 using namespace std;
 
-//ø‰ºº«™Ω∫ πÆ¡¶ 0
 int main(void) {
-	int n, k;
-	cin >> n >> k;
+	int m, n;
+	queue<int> original;
 
-	queue<int> josephs;
-
-	//¿‘∑¬πﬁ¿∫ ≈©±‚¿« ≈•∏¶ √ ±‚»≠
-	for (int i = 1; i <= n; i++)
-	{
-		josephs.push(i);
-		cout << josephs.back() << " ";
+	cin >> n >> m;
+	for (int i = 1; i <= n; ++i) {
+		//cout << i << " ";
+		original.push(i);
+		//cout << original.back() << " ";
 	}
-
-	for (int i = 1; i <= josephs.size(); i++)
-	{
-		
+	cout << "<";
+	// ÏöîÏÑ∏Ìë∏Ïä§ ÌÅê Íµ¨ÌòÑ
+	while (original.size() > 1) {
+		for (int i = 1; i < m; i++) {
+			int temp = original.front();
+			original.pop();
+			original.push(temp);
+		}
+		cout << original.front() << ", ";
+		original.pop();
 	}
+	cout << original.front() << ">" << '\n';
+	return 0;
 }

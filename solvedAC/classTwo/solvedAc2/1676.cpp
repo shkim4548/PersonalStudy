@@ -1,30 +1,21 @@
-#include "iostream"
-#include "vector"
+#include <iostream>
+using namespace std;
 
-long long factorial(int num) {
-	long long result = 1;
-	for (int i = 1; i <= num; ++i) {
-		result = result * i;
-	}
-	std::cout << result << std::endl;
-	return result;
-}
-
-int main(void)
-{
+int main(void) {
 	int n, count = 0;
-	std::cin >> n;
-	long long res = factorial(n);
-	std::cout << res << std::endl;
-	while(true) {
-		if (res / 10 <= 0)
-			break;
-		if (res % 10 == 0) {
-			std::cout << res << std::endl;
-			count++;
-		}
-		res /= 10;
-		std::cout << res << std::endl;
+	cin >> n;
+	for (int i = n; i >= 0; i--) {
+		if (i == 0)
+			continue;
+		if (i % 125 == 0)
+			count += 3;
+
+		else if (i % 25 == 0)
+			count += 2;
+
+		else if (i % 5 == 0)
+			count += 1;
+		
 	}
-	std::cout << count;
+	cout << count;
 }
