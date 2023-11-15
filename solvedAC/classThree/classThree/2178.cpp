@@ -26,17 +26,18 @@ void BFS(int yStart, int xStart) {
 			int ny = y + dy[i];
 			int nx = x + dx[i];
 			// 가동범위인지를 체크한다.
-			if (ny < 0 || ny >= N || ny < 0 || ny >= M)
+			if (ny < 0 || ny >= N || nx < 0 || nx >= M)
 				continue;
 			//
 			if (graph[ny][nx] == 0)
 				continue;
 
-			if (graph[ny][nx] == 1 && visited[ny][nx] == 0) {
-				dist[ny][nx] = dist[y][x] + 1;
-				q.push(make_pair(ny, nx));
-				visited[ny][nx] = true;
-			}
+			if (visited[ny][nx] == 1)
+				continue;
+
+			dist[ny][nx] = dist[y][x] + 1;
+			q.push(make_pair(ny, nx));
+			visited[ny][nx] = true;
 		}
 	}
 }
