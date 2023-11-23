@@ -3,40 +3,44 @@
 using namespace std;
 
 /*
-	ºĞÇÒÁ¤º¹
-	- ÀÌÁøÅ½»öÀ» ÀÌ¿ëÇÏ¿© Ã³¸®ÇÑ´Ù.
-	- ÀÌ ºĞ¾ß ÀÚÃ¼°¡ Àç±ÍÈ£Ãâ°ú ±²ÀåÈ÷ °ü·ÃÀÌ ±í´Ù.
-	- ¿¹½Ã°¡ µÇ´Â ¾Æ·¡ÀÇ ÄÚµå¸¦ º¯ÇüÇÏ¿© 2Â÷¿ø ºĞÇÒÀ» Ã³¸®ÇÑ´Ù.
-		- µ¿±âÃ³¸®¿¡ ½Ì±Û ½º·¹µå±ä ÇÑµ¥ ¼Óµµ¿¡ Å« ¹«¸®´Â ¾øÀ»µí?
+	
 */
 const int MAX = 129;
 vector<vector<int>> paper(MAX);
 int n, blue = 0, white = 0;
 
-// ºĞÇØÇØ¼­ ÇÑÁÙ¾¿ ³Ö¾îÁÖÀÚ
-void binarySearch(int row, int col, vector<vector<int>>& vec, int size) {
-	int midRow = row / 2;
-	int midCol = col / 2;
-
-	// ÇÑ°³ÀÇ ¿µ¿ªÀÌ ¸ğµÎ °°Àº ¼ıÀÚÀÎ°¡?
-	for (int i = midRow; i < midRow + n; i++) {
-		for (int j = midCol; j < midCol+ n; j++) {
-			if (vec[i][j] == vec[i + 1][j + 1])
+void binarySearch(int row, int col, int size) {
+	bool flag = true;
+	int tmp = paper[row][col];
+	for (int i = row; i < row + size; i++) 
+	{
+		for (int j = col; j < col + size; j++) 
+		{
+			if (tmp != paper[i][j]) 
 			{
-				if (vec[i][j] == 1)
-					blue++;
-				else
-					white++;
-			}
-			else 
-			{
-
+				flag = false;
+				break;
 			}
 		}
+		if (flag == false)
+			break;
 	}
 
-	// ´õÀÌ»ó ³ª´­ ¼ö ¾øÀ¸¸é¼­ °ªÀÌ ¾øÀ¸¸é -1 ¹İÈ¯
-	
+	// breakê°€ ë˜ì§€ ì•Šê³  ì§„í–‰ë  ë•Œ
+	if (flag != false) {
+		if (tmp == 0)
+			white++;
+		else if (tmp == 1)
+			blue++;
+	}
+
+	// breakê°€ ë˜ì—ˆì„ ë•Œ
+	else if (flag == false) {
+		binarySearch(row, col, size / 2);
+		binarySearch(row + size / 2, col, size / 2);
+		binarySearch(row, col + size / 2, size / 2);
+		binarySearch(row + size / 2, col + size / 2, size / 2);
+	}
 }
 
 int main(void) {
@@ -45,8 +49,7 @@ int main(void) {
 	cout.tie(nullptr);
 
 	int input;
-
-	// Á¾ÀÌ ÀÔ·Â¹ŞÀ½
+	// ê·¸ë˜í”„ë¥¼ ì…ë ¥ë°›ëŠ”ë‹¤.
 	cin >> n;
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
@@ -55,7 +58,6 @@ int main(void) {
 		}
 	}
 
-	binarySearch(0, n, paper);
-	// ÀÌÁøÅ½»öÀ» ½ÇÇàÇÑ´Ù
-	cout << blue << ' ' << white << '\n';
+	binarySearch(0, 0, n);
+	cout << white << '\n' << blue << '\n';
 }
