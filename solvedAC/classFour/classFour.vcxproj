@@ -128,6 +128,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="15650.cpp" />
+    <ClCompile Include="15652.cpp" />
+    <ClCompile Include="15654.cpp" />
+    <ClCompile Include="15663.cpp" />
     <ClCompile Include="1629.cpp" />
     <ClCompile Include="BackTracking_Permutation.cpp" />
   </ItemGroup>

@@ -3,30 +3,22 @@
 using namespace std;
 
 const int MAX = 9;
-vector<int> vec(MAX);
-vector<int> visited(MAX);
-int a, b;
+int vec[MAX] = { 0, };
+bool visited[MAX] = { 0, };
+int n, m;
 
-void back(vector<int> v, int cnt, int index)
+void dfs(int cnt, int index)
 {
-	if (vec.size() == b)
-	{
-		for (int i = 0; i < cnt; i++) 
-		{
+	if (cnt == m) {
+		for (int i = 0; i < m; i++)
 			cout << vec[i] << ' ';
-		}
 		cout << '\n';
-		return;
 	}
-
-	for (int i = index; i < v.size(); i++)
-	{
-		if (!visited[i])
-		{
+	for (int i = index; i <= n; i++) {
+		if (!visited[i]) {
 			visited[i] = true;
-			vec.push_back(v[i]);
-			back(v, cnt + 1, i);
-			vec.pop_back();
+			vec[cnt] = i;
+			dfs(cnt + 1, i + 1);
 			visited[i] = false;
 		}
 	}
@@ -34,11 +26,6 @@ void back(vector<int> v, int cnt, int index)
 
 int main()
 {
-	vector<int> v;
-	cin >> a >> b;
-	for (int i = 1; i <= a; i++) {
-		v.push_back(i);
-	}
-	back(v, 0, 0);
-
+	cin >> n >> m;
+	dfs(0, 1);
 }
