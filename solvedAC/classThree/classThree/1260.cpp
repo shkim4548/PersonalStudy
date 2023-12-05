@@ -62,7 +62,8 @@ int main(void) {
 	}
 
 	// 문제에서 요구한 출력에 맞추기 위해 정렬한다
-	for (int i = 1; i <= n; i++) {
+	for (int i = 1; i <= n; i++) 
+	{
 		sort(graph[i].begin(), graph[i].end());
 	}
 
