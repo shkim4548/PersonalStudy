@@ -35,6 +35,7 @@ void BFS(int yStart, int xStart) {
 			if (visited[ny][nx] == 1)
 				continue;
 
+			// 진짜 문제풀이 지점
 			dist[ny][nx] = dist[y][x] + 1;
 			q.push(make_pair(ny, nx));
 			visited[ny][nx] = true;
