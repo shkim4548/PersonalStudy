@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cstring>
 #include <vector>
 #include <algorithm>
 using namespace std;
@@ -11,22 +12,38 @@ bool compare(pair<char, int> a, pair<char, int> b)
 
 int main(void)
 {
-	int charCount = 0;
+	int ch[26] = { 0, };
+	int maxCount = 0, cnt = 0;
+	vector<pair<char, int>> counts;
 	string input;
-	vector<pair<char, int>> counter(26);
 	cin >> input;
 
 	for (int i = 0; i < input.size(); i++)
 	{
-		// 모두 대문자로 변환하여 비교한다
-		if (input[i] >= 97 && input[i] <= 122)
-			input[i] = input[i] - 32;
-
-		// 정렬되어있으므로 vector에 때려박고 제일 긴거 출력
-		counter[i].second++;
+		for (int j = 65; j <= 90; j++)
+		{
+			if (input[i] == j || input[i] == j + 32)
+				ch[j - 65]++;
+		}
+	}
+	int max = 0;
+	for (int i = 0; i < 26; i++)
+	{
+		if (max < ch[i])
+		{
+			max = ch[i];
+			maxCount = i;
+		}
 	}
 
-	sort(counter.begin(), counter.end(), compare);
-	cout << counter[0].first << '\n';
+	for (int i = 0; i < 26; i++)
+	{
+		if (max == ch[i])
+			cnt++;
+	}
+	if (cnt > 1)
+		cout << "?" << '\n';
+	else
+		cout << char(65 + maxCount);
 	return 0;
 }
