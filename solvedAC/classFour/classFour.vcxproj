@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="11725.cpp" />
+    <ClCompile Include="13549.cpp" />
     <ClCompile Include="15650.cpp" />
     <ClCompile Include="15652.cpp" />
     <ClCompile Include="15654.cpp" />
@@ -135,6 +136,7 @@
     <ClCompile Include="1629.cpp" />
     <ClCompile Include="1753.cpp" />
     <ClCompile Include="1916.cpp" />
+    <ClCompile Include="1991.cpp" />
     <ClCompile Include="BackTracking_Permutation.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
