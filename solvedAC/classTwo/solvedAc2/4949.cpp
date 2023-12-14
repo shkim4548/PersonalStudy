@@ -4,40 +4,18 @@
 #include <vector>
 using namespace std;
 
-bool validBalance(string input) {
-	stack<char> small;
-	stack<char> large;
-	
-	for (int i = 0; i < input.size(); i++) {
-		if (input[i] == '(')
-			small.push('(');
+bool ValidBalance(string& str)
+{
 
-		else if (input[i] == '[')
-			large.push('[');
-
-		else if (input[i] == ')')
-			small.pop();
-
-		else if (input[i] == ']')
-			large.pop();
-	}
-
-	if (small.empty() && large.empty())
-		return true;
-
-	else
-		return false;
 }
 
-int main(void) {
-	string input;
-	vector<string> vs;
-	vector<stack<char>> v;
+int main(void)
+{
+	vector<string> input;
 
-		getline(cin, input);
-		vs.push_back(input);
-	
+	// 입력을 while 문으로 받아야한다.
+	while (true)
+	{
 
-	while(!vs.empty())
-		validBalance(input);
+	}
 }
