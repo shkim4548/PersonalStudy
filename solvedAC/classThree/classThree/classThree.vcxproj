@@ -31,6 +31,7 @@
     <ClCompile Include="11723.cpp" />
     <ClCompile Include="11724.cpp" />
     <ClCompile Include="1260.cpp" />
+    <ClCompile Include="1389.cpp" />
     <ClCompile Include="1463.cpp" />
     <ClCompile Include="14940.cpp" />
     <ClCompile Include="1620.cpp" />
@@ -41,6 +42,7 @@
     <ClCompile Include="18870.cpp" />
     <ClCompile Include="1927.cpp" />
     <ClCompile Include="1931.cpp" />
+    <ClCompile Include="21736.cpp" />
     <ClCompile Include="2178.cpp" />
     <ClCompile Include="2579.cpp" />
     <ClCompile Include="2606.cpp" />
