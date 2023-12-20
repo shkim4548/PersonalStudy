@@ -47,7 +47,6 @@ int main(void)
 	sort(numbers.begin(), numbers.end());
 
 	// 중복제거
-	numbers.erase((unique(numbers.begin(), numbers.end())));
 	n = numbers.size();
 	dfs(n, k, numbers, permutation, visited);
 	return 0;
