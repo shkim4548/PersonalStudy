@@ -142,6 +142,7 @@
     <ClCompile Include="1916.cpp" />
     <ClCompile Include="1967.cpp" />
     <ClCompile Include="1991.cpp" />
+    <ClCompile Include="5639.cpp" />
     <ClCompile Include="9663.cpp" />
     <ClCompile Include="BackTracking_Permutation.cpp" />
   </ItemGroup>

@@ -1,23 +1,23 @@
-#include<iostream>
-#include<string>
-#include<math.h>
+#include <iostream>
+#include <string>
+#include <cmath>
 using namespace std;
 
-int main(void) {
-	int n, hash = 31;
-	long long hashed = 0;
-	char input[50];
-	//ÀÔ·ÂÀº ¿µ¹® ¼Ò¹®ÀÚ¸¸, ASCII 'a'==97
-	cin >> n;
-	for (int i = 0; i < n; i++) {
-		cin >> input[i];
+// ê° ê³„ì‚°ê°’ì´ ë²”ìœ„ë¥¼ ë„˜ì§€ ì•Šë„ë¡ mìœ¼ë¡œ ë‚˜ëˆˆ ë‚˜ë¨¸ì§€ë¥¼ êµ¬í•˜ê²Œí•œë‹¤.
+int main(void) 
+{
+	int l;
+	long long m  = 1234567891, r = 1;
+	long long sum = 0;
+	string str;
+	//ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ò¹ï¿½ï¿½Ú¸ï¿½, ASCII 'a'==97
+	cin >> l >> str;
+
+	for (int i = 0; i < str.length(); i++) 
+	{
+		sum += ((str[i] - 'a' + 1) * r) % m;
+		r = (r * 31) % m;
 	}
-	for (int i = 0; i < n; i++) {
-		//»çÄ¢ ¿¬»ê ¿¡¼­ °ö¼ÀÀº µ¡¼Àº¸´Ù ¿ì¼±µË´Ï´Ù. ÀØÁö ¸¿½Ã´Ù °ýÈ£Ä¡±â
-		hashed += ((int)input[i] - 96) * (int)pow(hash, i);
-		//cout << (int)input[i] - 96 << " ";
-		//cout << (int)pow(hash, i) << " " << i;
-		//cout << hashed << '\n';
-	}
-	cout << hashed;
+	cout << sum % m << '\n';
+	return 0;
 }
